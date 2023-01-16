@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import app from "./firebase.init";
+
+const auth = getAuth(app)
+const googleProvider = new GoogleAuthProvider()
 
 function App() {
+  const handleGoogleCart = () => {
+    console.log("Rakib Hosen google");
+  }
+  const handleGithubCart = () => {
+    console.log("rakib github");
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Bangladesh</h1>
+      <div style={{ textAlign: "center", marginBottom: "20px" }}>
+        <button onClick={handleGoogleCart}>Google Signin</button>
+        <button onClick={handleGithubCart}>github Signin</button>
+      </div>
+    </div >
   );
 }
 
